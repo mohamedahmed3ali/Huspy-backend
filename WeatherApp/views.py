@@ -2,13 +2,15 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
+from django.http import HttpResponse
 
 from WeatherApp.models import Cities, SearchHistory
 from WeatherApp.serializers import CitiesSerializer, SearchHistorySerializer
 
 
 # Create your views here.
-
+def home(request):
+    return HttpResponse('Husby-home')
 @csrf_exempt
 def getCities(request,city=''):
     if request.method =='GET':
