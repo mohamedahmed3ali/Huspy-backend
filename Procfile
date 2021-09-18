@@ -1,1 +1,3 @@
-web: gunicorn HuspyDjano.wsgi --log-file -
+web: gunicorn HuspyDjano.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
